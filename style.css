@@ -1,0 +1,54 @@
+:root {
+	--b: #262626;
+	--w: #dcdcd2;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--b);
+	animation: spin 2s cubic-bezier(0.46, 0.03, 0.52, 0.96) 0s infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+body:before, body:after {
+	content: "";
+	position: absolute;
+	width: 50vmin;
+	height: 25vmin;
+	margin-top: -25vmin;
+	border-radius: 50% 50% 0% 100% / 100% 100% 0% 0%;
+	background: 
+		radial-gradient(circle at 50% 100%, var(--b) 1vmin, #fff0 calc(1vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--b) 1vmin, #fff0 calc(1vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--b) 1vmin, #fff0 calc(1vmin + 1px)),
+		conic-gradient(from 90deg at 50% 100%, var(--b) 0 50.5%, #fff0  51.5%),		
+		radial-gradient(circle at 47% 100%, var(--b) 3vmin, #fff0 calc(3vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--w) 5vmin, #fff0 calc(5vmin + 1px)),
+		radial-gradient(circle at 47% 100%, var(--b) 7vmin, #fff0 calc(7vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--w) 9vmin, #fff0 calc(9vmin + 1px)),
+		radial-gradient(circle at 47% 100%, var(--b) 11vmin, #fff0 calc(11vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--w) 13vmin, #fff0 calc(13vmin + 1px)),
+		radial-gradient(circle at 47% 100%, var(--b) 15vmin, #fff0 calc(15vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--w) 17vmin, #fff0 calc(17vmin + 1px)),
+		radial-gradient(circle at 47% 100%, var(--b) 19vmin, #fff0 calc(19vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--w) 21vmin, #fff0 calc(21vmin + 1px)),
+		radial-gradient(circle at 47% 100%, var(--b) 23vmin, #fff0 calc(23vmin + 1px)),
+		radial-gradient(circle at 50% 100%, var(--w) 25vmin, #fff0 calc(25vmin + 1px)),
+		var(--b);
+}
+
+body:after {
+	transform: rotate(180deg);
+	margin-top: 25vmin;
+}
